@@ -12,8 +12,11 @@
 {
     IBOutlet UILabel *mainLabel;
     IBOutlet UILabel *labelNum;
+    IBOutlet UITableViewCell *customCell;
 }
 
 
+@property (nonatomic, retain) UILabel *mainLabel;
+@property (nonatomic, retain) UILabel *labelNum;
 
 @end

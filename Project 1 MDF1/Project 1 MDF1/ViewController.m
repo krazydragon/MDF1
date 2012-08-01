@@ -54,6 +54,9 @@
             if ([view isKindOfClass:[customCell class]])
             {
                 cell = (customCell*)view;
+               cell.mainLabel.text = [restaurantArray objectAtIndex:indexPath.row];
+                int tempNum = indexPath.row + 1;
+                cell.labelNum.text = [[NSString alloc ]initWithFormat: @"%d",tempNum];
                 
                
             

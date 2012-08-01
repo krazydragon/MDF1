@@ -9,7 +9,8 @@
 #import "customCell.h"
 
 @implementation customCell
-
+@synthesize mainLabel;
+@synthesize labelNum;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
