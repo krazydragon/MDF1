@@ -48,8 +48,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pU7-YV-fCp"/>
                     <connections>
                         <outlet property="tableView" destination="dnc-sG-fqc" id="Mhq-rH-AiN"/>
+                        <segue destination="Yhi-N3-Q8q" kind="push" identifier="NextView" id="VdQ-AI-Y0T"/>
                     </connections>
                 </viewController>
             </objects>
@@ -65,20 +67,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FRJ-nz-gwZ"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="473" y="117"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onClick:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

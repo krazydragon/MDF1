@@ -16,6 +16,8 @@
 		94BFB08015C8851300991175 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BFB07E15C8851300991175 /* MainStoryboard.storyboard */; };
 		94BFB08315C8851300991175 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BFB08215C8851300991175 /* ViewController.m */; };
 		94BFB08A15C8857900991175 /* CustomCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94BFB08915C8857900991175 /* CustomCellView.xib */; };
+		94BFB0A315C97D6700991175 /* Wrt.png in Resources */ = {isa = PBXBuildFile; fileRef = 94BFB0A215C97D6700991175 /* Wrt.png */; };
+		94BFB0A615C9817500991175 /* customCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BFB0A515C9817500991175 /* customCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,9 @@
 		94BFB08115C8851300991175 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		94BFB08215C8851300991175 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		94BFB08915C8857900991175 /* CustomCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellView.xib; sourceTree = "<group>"; };
+		94BFB0A215C97D6700991175 /* Wrt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Wrt.png; path = "../../../../Desktop/untitled folder/Finished Work/11-11/Wrt.png"; sourceTree = "<group>"; };
+		94BFB0A415C9817500991175 /* customCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customCell.h; sourceTree = "<group>"; };
+		94BFB0A515C9817500991175 /* customCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,7 @@
 		94BFB07215C8851300991175 /* Project 1 MDF1 */ = {
 			isa = PBXGroup;
 			children = (
+				94BFB0A215C97D6700991175 /* Wrt.png */,
 				94BFB07B15C8851300991175 /* AppDelegate.h */,
 				94BFB07C15C8851300991175 /* AppDelegate.m */,
 				94BFB07E15C8851300991175 /* MainStoryboard.storyboard */,
@@ -86,6 +92,8 @@
 				94BFB08215C8851300991175 /* ViewController.m */,
 				94BFB07315C8851300991175 /* Supporting Files */,
 				94BFB08915C8857900991175 /* CustomCellView.xib */,
+				94BFB0A415C9817500991175 /* customCell.h */,
+				94BFB0A515C9817500991175 /* customCell.m */,
 			);
 			path = "Project 1 MDF1";
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 				94BFB07715C8851300991175 /* InfoPlist.strings in Resources */,
 				94BFB08015C8851300991175 /* MainStoryboard.storyboard in Resources */,
 				94BFB08A15C8857900991175 /* CustomCellView.xib in Resources */,
+				94BFB0A315C97D6700991175 /* Wrt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +177,7 @@
 				94BFB07915C8851300991175 /* main.m in Sources */,
 				94BFB07D15C8851300991175 /* AppDelegate.m in Sources */,
 				94BFB08315C8851300991175 /* ViewController.m in Sources */,
+				94BFB0A615C9817500991175 /* customCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +291,7 @@
 				94BFB08815C8851300991175 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "customCell.h"
 
 @interface ViewController ()
 
@@ -42,16 +43,28 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
+    customCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
     if (cell == nil)
+    {
+    //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        NSArray* views = [[NSBundle mainBundle] loadNibNamed:@"CustomCellView" owner:nil options:nil];
+        for (UIView *view in views)
+        {
+            if ([view isKindOfClass:[customCell class]])
+            {
+                cell = (customCell*)view;
+                
+               
+            
+            }
+        }
     
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
-    static int count = 0;
     
-    cell.textLabel.text = [restaurantArray objectAtIndex:indexPath.row];
     
-    count++;
+    
     return cell;
     
 }
@@ -61,6 +74,7 @@
     UIButton *eventButton = (UIButton*)sender;
     if (eventButton != nil)
     {
+        
         if (eventButton.tag == 0)
         {
             [tableView setEditing:TRUE];
