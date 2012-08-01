@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad
 {
+    restaurantArray = [[NSArray alloc] initWithObjects:@"Dagon's Bar & Grill",@"Anthony's Seafood",@"Odin's Fire",@"McDonalds’",@"Chuck E Chesse",@"Jack in the Box",@"Burger King",@"Old Country Buffet",@"Cheese head Bar",@"Bubas Grill",@"Papadaux",@"Old Chicago",@"The Rock",@"Ivars",@"PF Changs",@"Pizzeria and Cucina",@"Lucky Food",@"Tha Beach",@"Oceanside",@"Dave’s Grill", nil];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -33,9 +35,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 20;
 }
 
-
+-(UITableViewCell *)tableView:(UITableView*)tableView2 cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
+    if (cell == nil)
+    
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    
+    static int count = 0;
+    
+    cell.textLabel.text = [restaurantArray objectAtIndex:indexPath.row];
+    
+    count++;
+    return cell;
+    
+}
 
 @end
