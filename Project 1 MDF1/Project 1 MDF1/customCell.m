@@ -9,6 +9,7 @@
 #import "customCell.h"
 
 @implementation customCell
+//allow labels to be used.
 @synthesize mainLabel;
 @synthesize labelNum;
 

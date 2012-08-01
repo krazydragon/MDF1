@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad
 {
+    
+    //List of restaurants
     restaurantArray = [[NSMutableArray alloc] initWithObjects:@"Dagon's Bar & Grill",@"Anthony's Seafood",@"Odin's Fire",@"McDonalds’",@"Chuck E Chesse",@"Jack in the Box",@"Burger King",@"Old Country Buffet",@"Cheese head Bar",@"Bubas Grill",@"Papadaux",@"Old Chicago",@"The Rock",@"Ivars",@"PF Changs",@"Pizzeria and Cucina",@"Lucky Food",@"Tha Beach",@"Oceanside",@"Dave’s Grill", nil];
     
     [super viewDidLoad];
@@ -39,6 +41,7 @@
     return [restaurantArray count];
 }
 
+//Create each cell of the table view from custom cell
 -(UITableViewCell *)tableView:(UITableView*)tableView2 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -46,7 +49,6 @@
     customCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier];
     if (cell == nil)
     {
-    //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
         NSArray* views = [[NSBundle mainBundle] loadNibNamed:@"CustomCellView" owner:nil options:nil];
         for (UIView *view in views)
@@ -71,7 +73,7 @@
     return cell;
     
 }
-
+//Allow user to enable and disable edit mode 
 -(IBAction)onClick:(id)sender
 {
     UIButton *eventButton = (UIButton*)sender;
@@ -90,11 +92,14 @@
         }
     }
 }
+//show delete buttons
 -(UITableViewCellEditingStyle)tableView:(UITableView *) editingStyleForRowAtPath:(NSIndexPath *)indexPath
 {
     return  UITableViewCellEditingStyleDelete;
 }
 
+
+//delete function
 -(void)tableView:(UITableView *)tView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
    if (editingStyle == UITableViewCellEditingStyleDelete)
