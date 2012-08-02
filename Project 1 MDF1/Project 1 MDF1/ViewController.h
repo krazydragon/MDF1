@@ -12,6 +12,7 @@
 {
     IBOutlet UITableView *tableView;
     NSMutableArray *restaurantArray;
+    NSString *tempTitle;
 }
 
 -(IBAction)onClick:(id)sender;

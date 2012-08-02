@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "customCell.h"
+#import "restaurantViewController.h"
 
 @interface ViewController ()
 
@@ -56,15 +57,15 @@
             if ([view isKindOfClass:[customCell class]])
             {
                 cell = (customCell*)view;
-               cell.mainLabel.text = [restaurantArray objectAtIndex:indexPath.row];
+                cell.mainLabel.text = [restaurantArray objectAtIndex:indexPath.row];
                 int tempNum = indexPath.row + 1;
                 cell.labelNum.text = [[NSString alloc ]initWithFormat: @"%d",tempNum];
                 
-               
-            
+                
+                
             }
         }
-    
+        
     }
     
     
@@ -73,7 +74,7 @@
     return cell;
     
 }
-//Allow user to enable and disable edit mode 
+//Allow user to enable and disable edit mode
 -(IBAction)onClick:(id)sender
 {
     UIButton *eventButton = (UIButton*)sender;
@@ -102,13 +103,27 @@
 //delete function
 -(void)tableView:(UITableView *)tView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   if (editingStyle == UITableViewCellEditingStyleDelete)
-   {
-       [restaurantArray removeObjectAtIndex:indexPath.row];
-       
-       [tView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:true];
-       
-   }
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [restaurantArray removeObjectAtIndex:indexPath.row];
+        
+        [tView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:true];
+        
+    }
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int tempNum = indexPath.row + 1;
+    tempTitle = [[NSString alloc]initWithFormat:@"%@ #%d",[restaurantArray objectAtIndex:indexPath.row], tempNum];
+    [self performSegueWithIdentifier: @"NextView" sender: self];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    restaurantViewController *event = (restaurantViewController *)[segue destinationViewController];
+    if (event != nil)
+    {
+        event.titleStr = tempTitle;
+    }
 }
 
 @end
